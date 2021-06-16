@@ -13,20 +13,22 @@
 <body>
     <div id="wrapper">
         <div class="container">
-            <center>
+            <div align="center" style="margin-top: 250px;">
                 <form action ="" method="post" class="navbar-form">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" name="user" class="form-control" required>
+                        <input type="text" name="user" class="form-control" placeholder="Username" required autofocus>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" name="pass" class="form-control" required>
+                        <input type="password" name="pass" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="submit" name="login" class="btn btn-primary" value="Login">
                     </div>
                 </form>
-            </center>
+            </div>
         </div>
-
     </div>
 </body>
 </html>
