@@ -1,3 +1,6 @@
+<?php
+require_once "../_config/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,8 @@
     <meta name="author" content="">
     <title>Naditya Wisna &mdash; Login</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../_assets/simple-sidebar/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>/_assets/simple-sidebar/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="<?=base_url()?>/_assets/RS ORTHOPEDI DAN TRAUMATOLOGI.png"
 </head>
 <body>
     <div id="wrapper">
