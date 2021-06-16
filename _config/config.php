@@ -2,6 +2,7 @@
 // setting default timezone 
 date_default_timezone_set('asia/hong_kong');
 
+// session start
 session_start();
 
 // koneksi ke database
