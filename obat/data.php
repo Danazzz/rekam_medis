@@ -12,12 +12,13 @@
         <div style="margin-bottom: 20px; ">
             <form class = "form-inline" action="" method="post">
                 <div class="form-group ">
-                    <input type="text" name="pencaharian" class="form-control" placeholder="pencaharian "
+                    <input type="text" name="pencarian" class="form-control" placeholder="pencarian "
             </div>
             <div class="form-group ">
                 <button type="submit" class="btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><button > 
             <div  
          </form>
+        </div>
         <div class = "table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
@@ -30,16 +31,42 @@
                 </thead>
                 <tbody>
                 <?php
+                $batas = 5;
+                $hal =  @$_GET['hal'];
+                if(empty($hal)) {
+                    $posisi = 0;
+                    $hal = 1;
+                } else {
+                    $posisi = ($hal - 1) * $batas;
+                }
                 $no= 1 ;
-                $sql_obat = mysqli_query($con,"SELECT * FROM tb_obat") or die (mysqli_error($con));
+                if($_SERVER['REQUEST_METHOD'] == "POST") {
+                    $pencarian = trim(mysqli_real_escape_string($con, $_POST['pencarian']));
+                    if($pencarian != '') {
+                        $sql =  "SELECT * FROM tb_obat WHERE nama_obat LIKE '%$pencarian%' ";
+                        $query = $sql;
+                        $queryJml = $sql;
+                    } else {
+                      $query = "SELECT * FROM tb_obat LIMIT $posisi, $batas";
+                      $queryJml = "SELECT * FROM tb_obat";
+                      $no = $posisi + 1;
+                    }
+                } else {
+                    $query = "SELECT * FROM tb_obat LIMIT $posisi, $batas";
+                    $queryJml = "SELECT * FROM tb_obat";
+                    $no = $posisi + 1 ;       
+                }  
+                
+                $sql_obat = mysqli_query($con,$query) or die (mysqli_error($con));
                 if(mysqli_num_rows($sql_obat) > 0) {
                     while($data = mysqli_fetch_array(sql_obat)) { ?>
                         <tr>
                             <td><?=$no++?></td>
                             <td><?=data['nama_obat']?></td>
                             <td><?=data['ket_obat']?></td>
-                            <td>
-
+                            <td class = "text-center">
+                                <a href = "edit.php?id=<?=$data['id_obat']?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a href = "del.php?id=<?=$data['id_obat']?>" onclick = "return confirm('Yakin akan menghapus data?')" class= "btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
                             </td>
                         </tr>
                     <?php 
