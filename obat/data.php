@@ -6,7 +6,7 @@
             <small>Data Obat</small>
             <div class "pull-right">
                 <a href = "" class="btn btn-default btn-xs"><i class= "glyphicon glyphicon-refresh"></i></a>
-                <a href = "" class="btn btn-success btn-xs"><i class= "glyphicon glyphicon-plus"></i>Tambah obat</a>
+                <a href = "" add.php="btn btn-success btn-xs"><i class= "glyphicon glyphicon-plus"></i>Tambah obat</a>
             </div> 
         </h4>  
         <div style="margin-bottom: 20px; ">
@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
                 <?php
-                $batas = 5;
+                $batas = 3;
                 $hal =  @$_GET['hal'];
                 if(empty($hal)) {
                     $posisi = 0;
@@ -61,7 +61,7 @@
                 if(mysqli_num_rows($sql_obat) > 0) {
                     while($data = mysqli_fetch_array(sql_obat)) { ?>
                         <tr>
-                            <td><?=$no++?></td>
+                            <td><?=$no++?>,</td>
                             <td><?=data['nama_obat']?></td>
                             <td><?=data['ket_obat']?></td>
                             <td class = "text-center">
@@ -78,6 +78,36 @@
                 </tbody>
             </table>
         </div>
+        <?php
+        if($_POST['pencarian'] == ''){ ? 
+            <div style="float:left;">
+                <?php 
+                $jml = mysqli_num_rows(mysqli_query($con, $queryJml));
+                echo "Jumlah Data : <b>$jml</b>";
+                ?>
+             </div>
+             <div style="float:right;">
+                <ul class="pagination pagination-sm" style="margin:0">
+                    <?php
+                    $jml_hal = ceil($jml / $batas);
+                    for ($i=1; $i <= $jml_hal; $i**) {
+                        if($i != $hal) {
+                            echo "<li><a href=\"?hal=$i\">$i</a></li>";
+                        } else {
+                            echo "<li class=\"active\"><a>$i</a></li>";
+                        }
+                    }
+                    ?>
+                </ul>
+             </div>
+            <?php
+        }    else { 
+                echo "<div style=\"float:left;\">";
+                $jml = mysqli_num_rows(mysql i_query)$con, $queryJml));
+                echo "Data Hasil Pencarian : <b>$jml</b>";
+                echo "</div";
+        }
+        ?> 
     </div>
 
 <?php include_once('../_footer.php'); ?>
