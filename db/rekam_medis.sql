@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 08:19 AM
+-- Generation Time: Jun 17, 2021 at 03:57 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -115,6 +115,17 @@ CREATE TABLE `tb_user` (
   `password` varchar(50) NOT NULL,
   `level` enum('1','2') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `level`) VALUES
+('140e3b99-cf70-11eb-991f-00d861e392f3', 'Nabila victory', 'bilsky', '3818b63dca4ebaebf27009a4019a594cb3cafda0', '1'),
+('350c1f13-cf70-11eb-991f-00d861e392f3', 'Yudiarsana', 'Kadekk', 'd186973ab34bb5d53a5538cae26af48f8573d5c3', '1'),
+('6a0f2e4a-cf73-11eb-991f-00d861e392f3', 'Wisnu', 'Wisnutriskananda', 'd70ba4fb7c032db2a9ac9770de3cf4e9b710afdd', '1'),
+('8c6080ee-cf70-11eb-991f-00d861e392f3', 'Cintya', 'Cintyawardanii', '04f82ba0e4d3880933a41d097491c4a869ab09a1', '1'),
+('8e78812e-ce7f-11eb-9934-00d861e392f3', 'Dana', 'Danazz', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1');
 
 --
 -- Indexes for dumped tables
