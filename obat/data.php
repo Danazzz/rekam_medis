@@ -2,9 +2,22 @@
 
     <div class = "box">
         <h1>Obat</h1>
-        <h2>
+        <h4>
             <small>Data Obat</small>
-        </h2>   
+            <div class "pull-right">
+                <a href = "" class="btn btn-default btn-xs"><i class= "glyphicon glyphicon-refresh"></i></a>
+                <a href = "" class="btn btn-success btn-xs"><i class= "glyphicon glyphicon-plus"></i>Tambah obat</a>
+            </div> 
+        </h4>  
+        <div style="margin-bottom: 20px; ">
+            <form class = "form-inline" action="" method="post">
+                <div class="form-group ">
+                    <input type="text" name="pencaharian" class="form-control" placeholder="pencaharian "
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><button > 
+            <div  
+         </form>
         <div class = "table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
