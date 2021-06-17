@@ -3,8 +3,7 @@ require_once "_congif/config.php";
 
 if(!isset($_SESSION['user'])){
     echo "<script>window.location='".base_url('auth/login.php')."';</script>";
-} else{
-?>   
+} ?>   
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -22,9 +21,34 @@ if(!isset($_SESSION['user'])){
 <body>
     <script src="<?=base_url('_assets/simple-sidebar/js/jquery.js')?>"></script>
     <script src="<?=base_url('_assets/simple-sidebar/js/bootstrap.min.js')?>"></script>
-    <div id = "wrapper">
-</body>
-</html>
-<?php
-}
-?>
+    <div id="wrapper"> 
+        <div id="sidebar-wrapper">
+           <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                 <a href="#">Rumah Sakit </a>
+        </li>
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+        <li>
+            <a href="#">Data Pasien</a>
+        </li>
+        <li>
+            <a href="#">Data Dokter</a>
+        </li>
+        <li>
+            <a href="#">Data Poliklinik</a>
+        </li>
+        <li>
+            <a href="#">Data Obat</a>
+        </li>
+        <li>
+            <a href="#">Rekam Medis</a>
+        </li>
+        <li>
+            <a href="#">Logout</a>
+        </li>
+    </ul>
+</div>  
+<div id="page-content-wrapper">
+    <div class="container-fluid">
