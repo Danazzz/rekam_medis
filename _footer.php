@@ -1,5 +1,5 @@
-           </div>
-         </div>
+            </div>
+        </div>
     </div>
     <script>
     $("#menu-toggle").click(function(e) {
