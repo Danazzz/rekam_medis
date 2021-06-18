@@ -31,7 +31,7 @@
 
 				<tbody>
 					<?php
-						$batas = 3;
+						$batas = 5;
 						$hal = @$_GET['hal'];
 						if(empty($hal)){
 							$posisi = 0;
