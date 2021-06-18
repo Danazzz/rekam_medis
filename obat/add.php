@@ -5,7 +5,7 @@
 		    <h4>
                 <small>Tambah Data Poliklinik</small>
 			    <div class="pull-right">
-				    <a href="data.php" class="btn btn-warning btn-xs"> Data</a>
+				    <a href="data.php" class="btn btn-info btn-xs"> Data</a>
 			    </div>
 		    </h4>
         <div class="row">
