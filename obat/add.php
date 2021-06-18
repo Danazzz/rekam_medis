@@ -4,7 +4,7 @@
             <h4>
                 <small>Tambah Data Obat</small>
                 <div class="pull-right">
-                    <a href="generate.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>Kembali</a>
+                    <a href="data.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>Kembali</a>
                 </div>
             </h4>
             <div class="row">
