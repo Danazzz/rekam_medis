@@ -6,6 +6,7 @@
                 <small>Tambah Data Poliklinik</small>
 			    <div class="pull-right">
 				    <a href="data.php" class="btn btn-info btn-xs"> Data</a>
+                    <a href="generate.php" class="btn btn-primary btn-xs"> Tembah Data</a>
 			    </div>
 		    </h4>
         <div class="row">
