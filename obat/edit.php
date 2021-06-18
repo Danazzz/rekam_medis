@@ -19,7 +19,7 @@
                         <div class="form-group">
                             <label for="nama">Nama Obat</label>
                             <input type="hidden" name="id" value="<?=$data['id_obat']?>"
-                            <input type="text" name="nama" value="<?=$data['nama_obat']?>" class="form-control" required autofocus>
+                            <input type="text" name="nama" id="nama" value="<?=$data['nama_obat']?>" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="nama">Keterangan</label>
