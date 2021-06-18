@@ -3,6 +3,7 @@
     <div class="box">
 		    <h1>Obat</h1>
 		    <h4>
+                <small>Tambah Data Poliklinik</small>
 			    <div class="pull-right">
 				    <a href="data.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Kembali</a>
 			    </div>
