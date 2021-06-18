@@ -4,7 +4,7 @@
 		<h1>Obat</h1>
 		<h4>
 			<div class="pull-right">
-				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
+				<a href="" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Kembali</a>
 			</div>
 		</h4>
 
