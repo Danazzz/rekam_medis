@@ -14,6 +14,11 @@ if(isset($_POST['add'])) {
     echo "<script>window.location='data.php';</script>";
 }
 else if(isset($_POST['edit'])) {
+    $id = $_POST['id'];
+    $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
+    $ket = trim(mysqli_real_escape_string($con, $_POST['ket']));
+    mysqli_query($con,"UPDATE tb_obat SET nama_obat = '$nama', ket_obat = '$ket' WHERE id_obat = '$id'") or die (mysqli_error($con));
+    echo "<script>window.location='data.php';</script>";
 
 }
 
