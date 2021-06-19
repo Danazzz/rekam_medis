@@ -1,8 +1,8 @@
 <?php include_once('../_header.php'); ?>
-
 	<div class="box">
-		<h1>Obat</h1>
+		<h1>Pasien</h1>
 		<h4>
+			<small>Data Pasien</small>
 			<div class="pull-right">
 				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
 				<a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Pasien</a>
@@ -22,15 +22,15 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Nomor Identita</th>
+						<th>Nomor Identitas</th>
 						<th>Nama Pasien </th>
 						<th>Jenis Kelamin</th>
                         <th>Alamat</th>
-                        <th>No Telp</th>
+                        <th>No. Telp</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
-
+				
 				<tbody>
 					<?php
 						$batas = 5;
@@ -73,8 +73,8 @@
                                     <td><?= $data['alamat']; ?></td>
                                     <td><?= $data['no_telp']; ?></td>
 									<td class="text-center">
-										<a href="edit.php?id=<?= $data['id_dokter'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-										<a href="del.php?id=<?= $data['id_dokter'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+										<a href="edit.php?id=<?= $data['id_pasien'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+										<a href="del.php?id=<?= $data['id_pasien'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
 									</td>
 								</tr>
 							<?php

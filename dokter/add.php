@@ -12,19 +12,19 @@
                     <form action="proses.php" method="post">
                         <div class="form-group">
                             <label for="nama">Nama Dokter</label>
-                            <input type="text" name="nama" class="form-control" required autofocus>
+                            <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Spesialis</label>
-                            <textarea name="spesialis" id="spesialis" class="form-control" required></textarea>
+                            <label for="spesialis">Spesialis</label>
+                            <input type="text" name="spesialis" id="spesialis" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Alamat</label>
+                            <label for="alamat">Alamat</label>
                             <textarea name="Alamat" id="Alamat" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="nama">no_tlp</label>
-                            <textarea name="no_tlp" id="no_tlp" class="form-control" required></textarea>
+                            <label for="telp">no, Telepon</label>
+                            <input type="number" name="telp" id="telp" class="form-control" required>
                         </div>
                         <div class="form-group pull-right">
                             <input type="submit" name="add" value="Simpan" class="btn btn-success">
