@@ -62,15 +62,15 @@
 							$no = $posisi + 1;
 						}
 						
-						$sql_obat = mysqli_query($con, $query) or die(mysqli_error($con));
+						$sql_dokter = mysqli_query($con, $query) or die(mysqli_error($con));
 						if(mysqli_num_rows($sql_dokter) > 0){
-							while($data = mysqli_fetch_array($sql_obat)){ ?>
+							while($data = mysqli_fetch_array($sql_dokter)){ ?>
 								<tr>
 									<td><?= $no++; ?>.</td>
 									<td><?= $data['nama_dokter']; ?></td>
 									<td><?= $data['spesialis']; ?></td>
                                     <td><?= $data['alamat']; ?></td>
-                                    <td><?= $data['no_tlp']; ?></td>
+                                    <!-- <td><?= $data['no_tlp']; ?></td> -->
 									<td class="text-center">
 										<a href="edit.php?id=<?= $data['id_dokter'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
 										<a href="del.php?id=<?= $data['id_dokter'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>

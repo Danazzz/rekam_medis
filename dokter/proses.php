@@ -9,7 +9,7 @@ if(isset($_POST['add'])) {
     $uuid = Uuid::uuid4()->toString();
     $nama = trim(mysqli_real_escape_string($con, $_POST['nama']));
     $spesialis = trim(mysqli_real_escape_string($con, $_POST['spesialis']));
-    mysqli_query($con,"INSERT INTO tb_obat(id_dokter, nama_dokter, spesialis) VALUES ('$uuid', '$nama', '$spesialis')") or die (mysqli_error($con));
+    mysqli_query($con,"INSERT INTO tb_dokter(id_dokter, nama_dokter, spesialis) VALUES ('$uuid', '$nama', '$spesialis')") or die (mysqli_error($con));
     echo "<script>window.location='data.php';</script>";
 }
 else if(isset($_POST['edit'])) {
