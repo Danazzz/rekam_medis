@@ -12,7 +12,7 @@
                     <?php
                     $id = @$_GET['id'];
                     $sql_obat = mysqli_query($con, "SELECT * FROM tb_dokter WHERE id_dokter = '$id'") or die (mysqli_error($con));
-                    $data = mysqli_fetch_array($sql_obat);
+                    $data = mysqli_fetch_array($sql_dokter);
                     ?>
                     <form action="proses.php" method="post">
                         <div class="form-group">

@@ -63,7 +63,7 @@
 						}
 						
 						$sql_obat = mysqli_query($con, $query) or die(mysqli_error($con));
-						if(mysqli_num_rows($sql_obat) > 0){
+						if(mysqli_num_rows($sql_dokter) > 0){
 							while($data = mysqli_fetch_array($sql_obat)){ ?>
 								<tr>
 									<td><?= $no++; ?>.</td>
