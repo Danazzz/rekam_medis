@@ -11,7 +11,7 @@ if(isset($_POST['add'])){
 	$alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
 	$telp = trim(mysqli_real_escape_string($con, $_POST['telp']));
 	mysqli_query($con, "INSERT INTO tb_dokter VALUES('$uuid', '$nama', '$spesialis', '$alamat', '$telp')") or die(mysqli_error($con));
-	echo "<script>alert('Data berhasil ditambahkan');window.location='data.php';</script>";
+	echo "<script>window.location='data.php';</script>";
 }
 else if(isset($_POST['edit'])){
 	$id = $_POST['id'];

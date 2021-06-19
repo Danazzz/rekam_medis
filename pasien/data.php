@@ -66,7 +66,7 @@
 						if(mysqli_num_rows($sql_pasien) > 0){
 							while($data = mysqli_fetch_array($sql_pasien)){ ?>
 								<tr>
-									<td><?= $no++; ?>.</td>
+									<!-- <td><?= $no++; ?>.</td> -->
 									<td><?= $data['nomor_identitas']; ?></td>
 									<td><?= $data['nama_pasien']; ?></td>
                                     <td><?= $data['jenis_kelamin']; ?></td>

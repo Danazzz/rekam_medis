@@ -23,11 +23,11 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>id dokter</th>
+						<th>Id dokter</th>
 						<th>Nama Dokter</th>
 						<th>Spesialis</th>
                         <th>Alamat</th>
-                        <th>No_tlp</th>
+                        <th>No. Telepon</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
@@ -67,11 +67,11 @@
 						if(mysqli_num_rows($sql_dokter) > 0){
 							while($data = mysqli_fetch_array($sql_dokter)){ ?>
 								<tr>
-									<td><?= $no++; ?>.</td>
+									<td><?= $data['id_dokter']; ?></td>
 									<td><?= $data['nama_dokter']; ?></td>
 									<td><?= $data['spesialis']; ?></td>
                                     <td><?= $data['alamat']; ?></td>
-                                    <!-- <td><?= $data['no_tlp']; ?></td> -->
+                                    <td><?= $data['no_telp']; ?></td>
 									<td class="text-center">
 										<a href="edit.php?id=<?= $data['id_dokter'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
 										<a href="del.php?id=<?= $data['id_dokter'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
@@ -81,7 +81,7 @@
 							}
 						}
 						else{
-							echo "<tr><td colspan=\"4\" align=\"center\">Data tidak ditemukan</td></tr>";
+							echo "<tr><td colspan=\"6\" align=\"center\">Data tidak ditemukan</td></tr>";
 						}
 					?>
 				</tbody>
