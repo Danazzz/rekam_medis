@@ -1,7 +1,7 @@
 <?php include_once('../_header.php'); ?>
 
 	<div class="box">
-		<h1>Obat</h1>
+		<h1>Poliklinik</h1>
 		<h4>
 			<div class="pull-right">
 				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -22,9 +22,9 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Nama Obat</th>
-						<th>Keterangan</th>
+						<th>id_poli</th>
+						<th>nama_poli</th>
+						<th>gedung</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
@@ -44,19 +44,19 @@
 						if($_SERVER['REQUEST_METHOD'] == "POST"){
 							$pencarian = trim(mysqli_real_escape_string($con, $_POST['pencarian']));
 							if($pencarian != ''){
-								$sql = "SELECT * FROM tb_obat WHERE nama_obat LIKE '%$pencarian%'";
+								$sql = "SELECT * FROM tb_poliklinik WHERE nama_poli LIKE '%$pencarian%'";
 								$query = $sql;
 								$query_jml = $sql;
 							}
 							else{
-								$query = "SELECT * FROM tb_obat LIMIT $posisi, $batas";
-								$query_jml = "SELECT * FROM tb_obat";
+								$query = "SELECT * FROM tb_poliklinik LIMIT $posisi, $batas";
+								$query_jml = "SELECT * FROM tb_poliklinik";
 								$no = $posisi + 1;
 							}
 						}
 						else{
-							$query = "SELECT * FROM tb_obat LIMIT $posisi, $batas";
-							$query_jml = "SELECT * FROM tb_obat";
+							$query = "SELECT * FROM tb_poliklinik LIMIT $posisi, $batas";
+							$query_jml = "SELECT * FROM tb_poliklinik";
 							$no = $posisi + 1;
 						}
 						
@@ -65,11 +65,11 @@
 							while($data = mysqli_fetch_array($sql_obat)){ ?>
 								<tr>
 									<td><?= $no++; ?>.</td>
-									<td><?= $data['nama_obat']; ?></td>
-									<td><?= $data['ket_obat']; ?></td>
+									<td><?= $data['nama_poli']; ?></td>
+									<td><?= $data['gedung']; ?></td>
 									<td class="text-center">
-										<a href="edit.php?id=<?= $data['id_obat'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-										<a href="del.php?id=<?= $data['id_obat'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+										<a href="edit.php?id=<?= $data['id_poli'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+										<a href="del.php?id=<?= $data['id_poli'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
 									</td>
 								</tr>
 							<?php
