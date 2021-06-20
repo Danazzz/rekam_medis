@@ -2,7 +2,6 @@
 	<div class="box">
 		<h1>Pasien</h1>
 		<h4>
-			<small>Data Pasien</small>
 			<div class="pull-right">
 				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
 				<a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Pasien</a>
