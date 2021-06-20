@@ -29,7 +29,6 @@
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
-				
 				<tbody>
 					<?php
 						$batas = 5;
@@ -118,6 +117,5 @@
 			}
 		?>
 	</div>
-
 
 <?php include_once('../_footer.php'); ?>
