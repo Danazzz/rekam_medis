@@ -11,10 +11,6 @@
                 <div class="col-lg-6 col-lg-offset-3">
                     <form action="proses.php" method="post">
                         <div class="form-group">
-                            <label for="identitas">Nomor Identitas</label>
-                            <input type="number" name="identitas" id="identitas" class="form-control" required autofocus>
-                        </div>
-                        <div class="form-group">
                             <label for="nama">Nama Dokter</label>
                             <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                         </div>
@@ -27,7 +23,7 @@
                             <textarea name="alamat" id="alamat" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="telp">no, Telepon</label>
+                            <label for="telp">No. Telepon</label>
                             <input type="number" name="telp" id="telp" class="form-control" required>
                         </div>
                         <div class="form-group pull-right">
