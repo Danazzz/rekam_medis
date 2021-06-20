@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label for="nama">Jenis kelamin</label>
                             <input type="hidden" name="jenis_kelamin" value="<?=$data['jenis_kelamin']?>">
-                            <input type="text" name="jenis_kelamin" id="jenis_kelamin" value="<?=$data['jenis_kelamin']?>" class="form-control" required autofocus>
+                            <input type="text" name="jenis_kelamin" id="jenis_kelamin" value="<?=$data['jenis_kelamin']?>" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Alamat</label>
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="nama">No Telp</label>
                             <input type="hidden" name="no_telp" value="<?=$data['no_telp']?>">
-                            <input type="text" name="no_telp" id="no_telp" value="<?=$data['no_telp']?>" class="form-control" required autofocus>
+                            <input type="text" name="no_telp" id="no_telp" value="<?=$data['no_telp']?>" class="form-control" required>
                         </div>
                         <div class="form-group pull-right">
                             <input type="submit" name="edit" value="Simpan" class="btn btn-success">
