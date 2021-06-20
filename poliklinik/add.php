@@ -1,8 +1,8 @@
 <?php include_once('../_header.php');?>
     <div class="box">
-        <h1>Obat</h1>
+        <h1>Poliklinik</h1>
             <h4>
-                <small>Tambah Data Obat</small>
+                <small>Tambah Data Poliklinik</small>
                 <div class="pull-right">
                     <a href="data.php" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>Kembali</a>
                 </div>
@@ -11,11 +11,11 @@
                 <div class="col-lg-6 col-lg-offset-3">
                     <form action="proses.php" method="post">
                         <div class="form-group">
-                            <label for="nama">Nama Obat</label>
+                            <label for="nama">Nama Poliklinik</label>
                             <input type="text" name="nama" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Keterangan</label>
+                            <label for="nama">gedung</label>
                             <textarea name="ket" id="ket" class="form-control" required></textarea>
                         </div>
                         <div class="form-group pull-right">
