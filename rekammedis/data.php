@@ -2,7 +2,6 @@
 
 	<div class="box">
 		<h1>Rekam Medis</h1>
-		<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 		<h4>
 			<small>Data Rekam Medis</small>
 			<div class="pull-right">
@@ -17,7 +16,7 @@
 						<tr>
 							<th>No.</th>
 							<th>Tanggal Periksa</th>
-							<th>Poli</th>
+							<th>Poliklinik</th>
 							<th>Nama Pasien</th>
 							<th>Keluhan</th>
 							<th>Nama Dokter</th>
