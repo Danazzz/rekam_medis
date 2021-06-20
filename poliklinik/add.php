@@ -12,11 +12,11 @@
                     <form action="proses.php" method="post">
                         <div class="form-group">
                             <label for="nama">Nama Poliklinik</label>
-                            <input type="text" name="nama" class="form-control" required autofocus>
+                            <input type="text" name="nama" id="nama" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
-                            <label for="nama">gedung</label>
-                            <textarea name="ket" id="ket" class="form-control" required></textarea>
+                            <label for="gedung">gedung</label>
+                            <input type="text" name="gedung" id="gedung" class="form-control" required>
                         </div>
                         <div class="form-group pull-right">
                             <input type="submit" name="add" value="Simpan" class="btn btn-success">
