@@ -4,7 +4,6 @@ include_once('../_header.php');
 
 <div class="box">
 	<h1>Dokter</h1>
-	<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 	<h4>
 		<small>Edit Data Dokter</small>
 		<div class="pull-right">
