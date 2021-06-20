@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2021 at 03:57 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Waktu pembuatan: 20 Jun 2021 pada 10.23
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_dokter`
+-- Struktur dari tabel `tb_dokter`
 --
 
 CREATE TABLE `tb_dokter` (
@@ -38,7 +38,7 @@ CREATE TABLE `tb_dokter` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_obat`
+-- Struktur dari tabel `tb_obat`
 --
 
 CREATE TABLE `tb_obat` (
@@ -47,10 +47,18 @@ CREATE TABLE `tb_obat` (
   `ket_obat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_obat`
+--
+
+INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `ket_obat`) VALUES
+('bdbd3639-bf14-4cd2-9f12-8783763ee6e6', 'Acnol Gel for Acne', 'Obat Jerawat'),
+('f5a57f60-a5d7-4482-bd1d-e913f04ec450', 'Promag Tablet', 'Obat maag isi 12 tablet');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pasien`
+-- Struktur dari tabel `tb_pasien`
 --
 
 CREATE TABLE `tb_pasien` (
@@ -65,7 +73,7 @@ CREATE TABLE `tb_pasien` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_poliklinik`
+-- Struktur dari tabel `tb_poliklinik`
 --
 
 CREATE TABLE `tb_poliklinik` (
@@ -77,7 +85,7 @@ CREATE TABLE `tb_poliklinik` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_rekammedis`
+-- Struktur dari tabel `tb_rekammedis`
 --
 
 CREATE TABLE `tb_rekammedis` (
@@ -93,7 +101,7 @@ CREATE TABLE `tb_rekammedis` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_rm_obat`
+-- Struktur dari tabel `tb_rm_obat`
 --
 
 CREATE TABLE `tb_rm_obat` (
@@ -105,7 +113,7 @@ CREATE TABLE `tb_rm_obat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -117,7 +125,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `level`) VALUES
@@ -132,56 +140,80 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `level`) 
 --
 
 --
--- Indexes for table `tb_dokter`
+-- Indeks untuk tabel `tb_dokter`
 --
 ALTER TABLE `tb_dokter`
   ADD PRIMARY KEY (`id_dokter`);
 
 --
--- Indexes for table `tb_obat`
+-- Indeks untuk tabel `tb_obat`
 --
 ALTER TABLE `tb_obat`
   ADD PRIMARY KEY (`id_obat`);
 
 --
--- Indexes for table `tb_pasien`
+-- Indeks untuk tabel `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indexes for table `tb_poliklinik`
+-- Indeks untuk tabel `tb_poliklinik`
 --
 ALTER TABLE `tb_poliklinik`
   ADD PRIMARY KEY (`id_poli`);
 
 --
--- Indexes for table `tb_rekammedis`
+-- Indeks untuk tabel `tb_rekammedis`
 --
 ALTER TABLE `tb_rekammedis`
-  ADD PRIMARY KEY (`id_rm`);
+  ADD PRIMARY KEY (`id_rm`),
+  ADD KEY `id_pasien` (`id_pasien`),
+  ADD KEY `id_dokter` (`id_dokter`),
+  ADD KEY `id_poli` (`id_poli`);
 
 --
--- Indexes for table `tb_rm_obat`
+-- Indeks untuk tabel `tb_rm_obat`
 --
 ALTER TABLE `tb_rm_obat`
-  ADD PRIMARY KEY (`id_rm_obat`);
+  ADD PRIMARY KEY (`id_rm_obat`),
+  ADD KEY `id_rm` (`id_rm`),
+  ADD KEY `id_obat` (`id_obat`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_rm_obat`
+-- AUTO_INCREMENT untuk tabel `tb_rm_obat`
 --
 ALTER TABLE `tb_rm_obat`
   MODIFY `id_rm_obat` int(8) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tb_rekammedis`
+--
+ALTER TABLE `tb_rekammedis`
+  ADD CONSTRAINT `tb_rekammedis_ibfk_1` FOREIGN KEY (`id_pasien`) REFERENCES `tb_pasien` (`id_pasien`),
+  ADD CONSTRAINT `tb_rekammedis_ibfk_2` FOREIGN KEY (`id_dokter`) REFERENCES `tb_dokter` (`id_dokter`),
+  ADD CONSTRAINT `tb_rekammedis_ibfk_3` FOREIGN KEY (`id_poli`) REFERENCES `tb_poliklinik` (`id_poli`);
+
+--
+-- Ketidakleluasaan untuk tabel `tb_rm_obat`
+--
+ALTER TABLE `tb_rm_obat`
+  ADD CONSTRAINT `tb_rm_obat_ibfk_1` FOREIGN KEY (`id_rm`) REFERENCES `tb_rekammedis` (`id_rm`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_rm_obat_ibfk_2` FOREIGN KEY (`id_obat`) REFERENCES `tb_obat` (`id_obat`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
