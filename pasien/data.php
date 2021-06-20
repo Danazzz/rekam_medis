@@ -22,8 +22,8 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Nomor Identitas</th>
-						<th>Nama Pasien </th>
+						<th>No.</th>
+						<th>Nama</th>
 						<th>Jenis Kelamin</th>
                         <th>Alamat</th>
                         <th>No. Telp</th>
@@ -66,7 +66,6 @@
 						if(mysqli_num_rows($sql_pasien) > 0){
 							while($data = mysqli_fetch_array($sql_pasien)){ ?>
 								<tr>
-									<!-- <td><?= $no++; ?>.</td> -->
 									<td><?= $data['nomor_identitas']; ?></td>
 									<td><?= $data['nama_pasien']; ?></td>
                                     <td><?= $data['jenis_kelamin']; ?></td>
