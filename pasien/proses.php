@@ -12,7 +12,7 @@ if(isset($_POST['add'])) {
     $alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
     $telp = trim(mysqli_real_escape_string($con, $_POST['telp']));
     mysqli_query($con,"INSERT INTO tb_pasien(id_pasien, nomor_identitas, nama_pasien, jenis_kelamin, alamat, no_telp ) VALUES ('$uuid', '$identitas', '$nama', '$jk', '$alamat', '$telp')") or die (mysqli_error($con));
-    echo "<script>window.location='data.php';</script>";
+    echo "<script>alert('Data berhasil ditambah');window.location='data.php';</script>";
 }
 else if(isset($_POST['edit'])) {
     $id = $_POST['id'];
@@ -22,6 +22,6 @@ else if(isset($_POST['edit'])) {
     $alamat = trim(mysqli_real_escape_string($con, $_POST['alamat']));
     $telp = trim(mysqli_real_escape_string($con, $_POST['telp']));
     mysqli_query($con,"UPDATE tb_pasien SET nomor_identitas = '$identitas', nama_pasien = '$nama' , jenis_kelamin = '$jk', alamat = '$alamat', no_telp = '$telp' WHERE id_pasien = '$id'") or die (mysqli_error($con));
-    echo "<script>window.location='data.php';</script>";
+    echo "<script>alert('Data berhasil diubah');window.location='data.php';</script>";
 }
 ?>
