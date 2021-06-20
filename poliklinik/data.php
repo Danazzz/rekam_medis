@@ -5,7 +5,7 @@
 		<h4>
 			<div class="pull-right">
 				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
-				<a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Obat</a>
+				<a href="add.php" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i> Tambah Nama Poliklinik</a>
 			</div>
 		</h4>
 		<div style="margin-bottom:10px;">
@@ -60,9 +60,9 @@
 							$no = $posisi + 1;
 						}
 						
-						$sql_obat = mysqli_query($con, $query) or die (mysqli_error($con));
-						if(mysqli_num_rows($sql_obat) > 0){
-							while($data = mysqli_fetch_array($sql_obat)){ ?>
+						$sql_poliklinik = mysqli_query($con, $query) or die (mysqli_error($con));
+						if(mysqli_num_rows($sql_poliklinik) > 0){
+							while($data = mysqli_fetch_array($sql_poliklinik)){ ?>
 								<tr>
 									<td><?= $no++; ?>.</td>
 									<td><?= $data['nama_poli']; ?></td>
