@@ -1,6 +1,6 @@
 <?php include_once('../_header.php');?>
     <div class="box">
-        <h1>Obat</h1>
+        <h1>Pasien</h1>
             <h4>
                 <small>Edit Data Pasien</small>
                 <div class="pull-right">
@@ -11,32 +11,38 @@
                 <div class="col-lg-6 col-lg-offset-3">
                     <?php
                     $id = @$_GET['id'];
-                    $sql_obat = mysqli_query($con, "SELECT * FROM tb_obat WHERE id_obat = '$id'") or die (mysqli_error($con));
-                    $data = mysqli_fetch_array($sql_obat);
+                    $sql_pasien = mysqli_query($con, "SELECT * FROM tb_pasien WHERE id_pasien = '$id'") or die (mysqli_error($con));
+                    $data = mysqli_fetch_array($sql_pasien);
                     ?>
                     <form action="proses.php" method="post">
                         <div class="form-group">
-                            <label for="nama">Nomor Identitas</label>
-                            <input type="hidden" name="nomor_identitas" value="<?=$data['nomor_identitas']?>">
-                            <input type="text" name="nomor_identitas" id="nomor_identitas" value="<?=$data['nomor_identitas']?>" class="form-control" required autofocus>
+                            <label for="identitas">Nomor Identitas</label>
+                            <input type="hidden" name="id" value="<?=$data['id_pasien']?>">
+                            <input type="text" name="identitas" id="identitas" value="<?=$data['nomor_identitas']?>" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama Pasien</label>
-                            <textarea name="nama_pasien" id="nama_pasien" class="form-control" required><?=$data['nama_pasien']?></textarea>
+                            <textarea name="nama" id="nama" class="form-control" required><?=$data['nama_pasien']?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Jenis kelamin</label>
-                            <input type="hidden" name="jenis_kelamin" value="<?=$data['jenis_kelamin']?>">
-                            <input type="text" name="jenis_kelamin" id="jenis_kelamin" value="<?=$data['jenis_kelamin']?>" class="form-control" required autofocus>
+                            <label for="jk">Jenis Kelamin</label>
+                            <div>
+                                <label class="radio-inline">
+                                    <input type="radio" name="jk" id="jk" value="L" required="" <?= $data['jenis_kelamin'] == "L" ? "checked" : null ?>> Laki - laki
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="jk" value="P" <?= $data['jenis_kelamin'] == "P" ? "checked" : null ?>> Perempuan
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="nama">Alamat</label>
+                            <label for="alamat">Alamat</label>
                             <textarea name="alamat" id="alamat" class="form-control" required><?=$data['alamat']?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="nama">No Telp</label>
-                            <input type="hidden" name="no_telp" value="<?=$data['no_telp']?>">
-                            <input type="text" name="no_telp" id="no_telp" value="<?=$data['no_telp']?>" class="form-control" required autofocus>
+                            <label for="telp">No Telp</label>
+                            <input type="hidden" name="telp" value="<?=$data['no_telp']?>">
+                            <input type="text" name="telp" id="telp" value="<?=$data['no_telp']?>" class="form-control" required>
                         </div>
                         <div class="form-group pull-right">
                             <input type="submit" name="edit" value="Simpan" class="btn btn-success">

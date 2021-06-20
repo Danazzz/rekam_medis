@@ -1,7 +1,6 @@
 <?php include_once('../_header.php'); ?>
-
 	<div class="box">
-		<h1>Obat</h1>
+		<h1>Pasien</h1>
 		<h4>
 			<div class="pull-right">
 				<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-refresh"></i></a>
@@ -22,15 +21,14 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Nomor Identitas</th>
-						<th>Nama Pasien </th>
+						<th>No.</th>
+						<th>Nama</th>
 						<th>Jenis Kelamin</th>
                         <th>Alamat</th>
                         <th>No. Telp</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
-
 				<tbody>
 					<?php
 						$batas = 5;
@@ -66,15 +64,14 @@
 						if(mysqli_num_rows($sql_pasien) > 0){
 							while($data = mysqli_fetch_array($sql_pasien)){ ?>
 								<tr>
-									<td><?= $no++; ?>.</td>
 									<td><?= $data['nomor_identitas']; ?></td>
 									<td><?= $data['nama_pasien']; ?></td>
                                     <td><?= $data['jenis_kelamin']; ?></td>
                                     <td><?= $data['alamat']; ?></td>
                                     <td><?= $data['no_telp']; ?></td>
 									<td class="text-center">
-										<a href="edit.php?id=<?= $data['id_dokter'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-										<a href="del.php?id=<?= $data['id_dokter'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+										<a href="edit.php?id=<?= $data['id_pasien'] ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
+										<a href="del.php?id=<?= $data['id_pasien'] ?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
 									</td>
 								</tr>
 							<?php
@@ -120,6 +117,5 @@
 			}
 		?>
 	</div>
-
 
 <?php include_once('../_footer.php'); ?>
