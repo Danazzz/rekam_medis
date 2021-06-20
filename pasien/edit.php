@@ -11,8 +11,8 @@
                 <div class="col-lg-6 col-lg-offset-3">
                     <?php
                     $id = @$_GET['id'];
-                    $sql_obat = mysqli_query($con, "SELECT * FROM tb_obat WHERE id_obat = '$id'") or die (mysqli_error($con));
-                    $data = mysqli_fetch_array($sql_obat);
+                    $sql_pasien = mysqli_query($con, "SELECT * FROM tb_pasien WHERE id_pasien = '$id'") or die (mysqli_error($con));
+                    $data = mysqli_fetch_array($sql_pasien);
                     ?>
                     <form action="proses.php" method="post">
                         <div class="form-group">
