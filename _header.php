@@ -44,7 +44,7 @@ if(!isset($_SESSION['user'])){
             <a href="<?=base_url('obat/data.php')?>">Data Obat</a>
         </li>
         <li>
-            <a href="<?=base_url('rekammedis/data.php')?>">Rekam Medis</a>
+            <a href="<?=base_url('rekammedis/data.php')?>"><span class="text-success">Rekam Medis</span></a>
         </li>
         <li>
             <a href="<?=base_url('auth/logout.php')?>"><span class="text-danger">Logout</span></a>

@@ -22,9 +22,9 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>id_poli</th>
-						<th>nama_poli</th>
-						<th>gedung</th>
+						<th>ID Poliklinik</th>
+						<th>Nama</th>
+						<th>Gedung</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
@@ -60,7 +60,7 @@
 							$no = $posisi + 1;
 						}
 						
-						$sql_obat = mysqli_query($con, $query) or die(mysqli_error($con));
+						$sql_obat = mysqli_query($con, $query) or die (mysqli_error($con));
 						if(mysqli_num_rows($sql_obat) > 0){
 							while($data = mysqli_fetch_array($sql_obat)){ ?>
 								<tr>

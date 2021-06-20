@@ -23,7 +23,7 @@
 				<thead>
 					<tr>
 						<th>No.</th>
-						<th>Nama Obat</th>
+						<th>Nama</th>
 						<th>Keterangan</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
