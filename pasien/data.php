@@ -22,11 +22,11 @@
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
-						<th>Nomor Identita</th>
+						<th>Nomor Identitas</th>
 						<th>Nama Pasien </th>
 						<th>Jenis Kelamin</th>
                         <th>Alamat</th>
-                        <th>No Telp</th>
+                        <th>No. Telp</th>
 						<th><i class="glyphicon glyphicon-cog"></i></th>
 					</tr>
 				</thead>
